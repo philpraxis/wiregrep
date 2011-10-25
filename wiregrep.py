@@ -5,8 +5,11 @@
 #       
 #       Copyright 2011 Philippe Langlois <phil _-~AATT~-_ p1sec.com>
 #       
+#       Philippe Langlois
+#       http://www.p1sec.com
+#
 #       Work licensed under GPLv3, please see gpl.org for more information.
-#       
+#
 #       
 
 import pyshark
