@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-#       wire_reader.py
+#       wiregrep.py
 #       
 #       Copyright 2011 Philippe Langlois <phil@p1sec.com>
 #       
-#       Closed source, proprietary and confidential code.
+#       Work licensed under GPLv3, please see gpl.org for more information.
 #       
 #       
 
@@ -14,7 +14,7 @@ import sys
 import binascii
 
 class wiregrep():
-  def __init__(self, pfile = None, wire_filter = 'ip.version eq 4 and sctp.chunk_type == 2'):
+  def __init__(self, pfile = None, wire_filter = 'ip.version eq 4'):
     self.pcap = 0
     self.pfile = pfile
     self.wire_filter = wire_filter
@@ -22,9 +22,6 @@ class wiregrep():
       self.add(pfile)
 
   def add(self, pfile): 
-    #      wire_filter = 'ip.version eq 4 and sctp.chunk_type == 2', 
-    #      collect_fields = ['frame.number', 'sctp.parameter_state_cookie']
-    #      ):
     self.pfile = pfile
     #self.pcap = pyshark.read(pfile, ['frame.number', 'frame'], self.wire_filter)
     self.pcap = pyshark.read(pfile, ['frame.number'], self.wire_filter)
